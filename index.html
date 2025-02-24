@@ -4,40 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">🔧little tools</title>
+
+    <link id="favicon" rel="icon" href="favicon.png" type="image/x-icon">
+    <script src="./module/util/util.js" type="text/javascript" charset="utf-8"></script>
+
+    <link href="./module/guaguatu/guaguatu.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://www.guaguatu.com/resources/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link id="favicon" rel="icon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
-
-<script>
-    function getBasePath() {  // 根据后退配置调整
-        let rootPath = window.location.pathname.split('/').slice(0, 2).join('/');
-        // console.log("ROOT PATH: ", rootPath);
-        return rootPath;
-    }
-
-    function loadScript(scripts) {
-        scripts.forEach(function (scriptPath) {
-            let script = document.createElement('script');
-            script.src = getBasePath() + scriptPath;
-            document.body.appendChild(script);
-        });
-    }
-
-    function loadCss(stylesheets) {
-        stylesheets.forEach(function (stylePath) {
-            let link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = getBasePath() + stylePath;
-            document.head.appendChild(link);
-        });
-    }
-
-    loadCss(['/module/guaguatu/guaguatu.css']);
-</script>
 
 <!-- 静态加载，动态加载刷新时体验不好 -->
 <div id="navbar-container">
@@ -93,7 +69,7 @@
 <!-- 页面内容 -->
 <script>
     // 调用函数，传入要加载的 JavaScript 文件和 CSS 文件数组
-    loadScript(['/module/util/util.js', '/module/lang/lang.js', '/module/guaguatu/guaguatu.js',
+    loadScript(['/module/lang/lang.js', '/module/guaguatu/guaguatu.js',
         '/module/router/router.js']);  // 最后加载 router.js，里面会记录全局变量
 </script>
 </body>
