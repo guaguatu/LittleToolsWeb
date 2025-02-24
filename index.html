@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">🔧little tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://www.guaguatu.com/resources/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link id="favicon" rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+<script>
+    function getBasePath() {  // 根据后退配置调整
+        let rootPath = window.location.pathname.split('/').slice(0, 2).join('/');
+        // console.log("ROOT PATH: ", rootPath);
+        return rootPath;
+    }
+
+    function loadScript(scripts) {
+        scripts.forEach(function (scriptPath) {
+            let script = document.createElement('script');
+            script.src = getBasePath() + scriptPath;
+            document.body.appendChild(script);
+        });
+    }
+
+    function loadCss(stylesheets) {
+        stylesheets.forEach(function (stylePath) {
+            let link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = getBasePath() + stylePath;
+            document.head.appendChild(link);
+        });
+    }
+
+    loadCss(['/module/guaguatu/guaguatu.css']);
+</script>
+
+<!-- 静态加载，动态加载刷新时体验不好 -->
+<div id="navbar-container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a id="navbar-brand" class="navbar-brand" href="/home" data-i18n="brand">LittleTools</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link ms-2" href="/base64" id="base64-link" data-i18n="base64-link">Base64</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2" href="/json-compare" id="json-compare-link"
+                           data-i18n="json-compare-link">Json
+                            Compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2" href="/country-code" id="country-code-link"
+                           data-i18n="country-code-link">Country
+                            Code Convert</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="switch-language" class="btn btn-outline-info ms-2" data-i18n="switchLanguage">
+                            English
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- 动态加载内容 -->
+<div id="content-container"></div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p data-i18n="footer.copyright"> &copy; 2024 瓜瓜兔科技有限公司. 保留所有权利。</p>
+        <a style="color: white" href="https://beian.miit.gov.cn" target="_blank">粤ICP备2024335879号</a>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://www.guaguatu.com/resources/jquery/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://www.guaguatu.com/resources/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- 页面内容 -->
+<script>
+    // 调用函数，传入要加载的 JavaScript 文件和 CSS 文件数组
+    loadScript(['/module/util/util.js', '/module/lang/lang.js', '/module/guaguatu/guaguatu.js',
+        '/module/router/router.js']);  // 最后加载 router.js，里面会记录全局变量
+</script>
+</body>
+</html>
