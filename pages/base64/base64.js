@@ -7,6 +7,18 @@ $("#encode").click(function () {
     areaOutput.val(newText);
 });
 
+// 监听下拉框的 change 事件
+$('#type').on('change', function () {
+    // 获取下拉框当前选中的值
+    var selectedValue = $(this).val();
+    if (selectedValue === 'pdf') {
+        // 当选择 PDF 时，禁用 encode 按钮
+        $('#encode').prop('disabled', true).addClass('disabled');
+    } else {
+        // 当选择其他值时，启用 encode 按钮
+        $('#encode').prop('disabled', false).removeClass('disabled');
+    }
+});
 
 $("#decode").click(function () {
     let areaOutput = $("#output");
