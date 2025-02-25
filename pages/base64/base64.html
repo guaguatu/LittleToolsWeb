@@ -1,4 +1,22 @@
+<div class="m-5">
+    <div>
+        <label for="input" class="form-label"><strong>Input</strong></label>
+        <textarea class="form-control" id="input" rows="10"></textarea>
+    </div>
+    <br/>
 
-<div>
-    <h1>Base64</h1>
+    <div>
+        <select class="btn btn-light" id="type">
+            <option selected>Normal</option>
+            <option value="pdf">PDF</option>
+        </select>
+        <button id="decode" type="button" class="btn btn-sm btn-success">Decode</button>
+        <button id="encode" type="button" class="btn btn-sm btn-warning">Encode</button>
+        <a id="download" type="button" class="btn btn-link disabled"></a>
+    </div>
+    <br/>
+    <div>
+        <label for="output" class="form-label"><strong>Output</strong></label>
+        <textarea class="form-control" id="output" rows="10"></textarea>
+    </div>
 </div>

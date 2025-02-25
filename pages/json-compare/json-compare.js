@@ -1,5 +1,5 @@
 
 $('#compare').click(function () {
-   console.log("COMPARE")
     jdd.compare();
+    document.getElementById('compare').disabled = false;
 });
