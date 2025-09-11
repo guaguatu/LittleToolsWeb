@@ -1,0 +1,35 @@
+<div class="m-5">
+
+    <div class="container text-left">
+        <button id="compareBtn" type="button" class="btn btn-sm btn-primary">对比列表</button>
+        <button id="clearBtn" type="button" class="btn btn-sm btn-secondary">清空</button>
+        <a id="download" type="button" class="btn btn-link disabled"></a>
+    </div>
+    <br/>
+
+    <div class="container text-center">
+        <div class="row row-cols-2">
+            <div>
+                <label for="list_left" class="form-label"><strong>左侧列表</strong></label>
+                <textarea class="form-control" id="list_left" rows="30" placeholder="请输入列表数据，每行一个元素"></textarea>
+            </div>
+
+            <div>
+                <label for="list_right" class="form-label"><strong>右侧列表</strong></label>
+                <textarea class="form-control" id="list_right" rows="30" placeholder="请输入列表数据，每行一个元素"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <label for="result_output" class="form-label"><strong>对比结果</strong></label>
+                <textarea class="form-control" id="result_output" rows="20" readonly placeholder="对比结果将显示在这里"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
