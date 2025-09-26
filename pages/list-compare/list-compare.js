@@ -100,7 +100,7 @@ function generateComparisonReport(leftOnly, rightOnly, common, leftTotal, rightT
     report.push("=== 左侧独有 (" + leftOnly.length + "个) ===");
     if (leftOnly.length > 0) {
         leftOnly.forEach(item => {
-            report.push("+ " + item);
+            report.push(item);
         });
     } else {
         report.push("(无)");
@@ -111,7 +111,7 @@ function generateComparisonReport(leftOnly, rightOnly, common, leftTotal, rightT
     report.push("=== 右侧独有 (" + rightOnly.length + "个) ===");
     if (rightOnly.length > 0) {
         rightOnly.forEach(item => {
-            report.push("+ " + item);
+            report.push(item);
         });
     } else {
         report.push("(无)");
@@ -122,7 +122,7 @@ function generateComparisonReport(leftOnly, rightOnly, common, leftTotal, rightT
     report.push("=== 共同元素 (" + common.length + "个) ===");
     if (common.length > 0) {
         common.forEach(item => {
-            report.push("= " + item);
+            report.push(item);
         });
     } else {
         report.push("(无)");
